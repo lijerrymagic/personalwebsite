@@ -10,7 +10,7 @@ app.use(function (req, res, next){
 const PORT = 3000;
 const HOST = '0.0.0.0';
 
-app.get('/', (req, res) => res.redirect('/index.html'))
+// app.get('/', (req, res) => res.redirect('/index.html'))
 
 app.use(express.static('frontend'));
 
