@@ -25,12 +25,12 @@ let httpsOptions = {
 
 app.use(express.static('frontend'));
 
-// https.createServer(httpsOptions,app).listen(PORT, function () {
-//     console.log('HTTPS on port');
-// });
-http.createServer(app).listen(process.env.PORT, function () {
-    console.log('HTTP on port');
+https.createServer(httpsOptions,app).listen(process.env.PORT, function () {
+    console.log('HTTPS on port');
 });
+// http.createServer(app).listen(process.env.PORT, function () {
+//     console.log('HTTP on port');
+// });
 // http.createServer(app).listen(PORT, function () {
 //     console.log('HTTP on port 3000');
 // });
