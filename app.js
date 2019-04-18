@@ -13,7 +13,7 @@ app.use(function (req, res, next){
 });
 
 // Constants
-// const PORT = 3000;
+const PORT = 3000;
 // const HOST = '0.0.0.0';
 
 let httpsOptions = {
@@ -25,7 +25,7 @@ let httpsOptions = {
 
 app.use(express.static('frontend'));
 
-https.createServer(httpsOptions,app).listen(process.env.PORT, function () {
+https.createServer(httpsOptions,app).listen(PORT, function () {
     console.log('HTTPS on port');
 });
 http.createServer(app).listen(process.env.PORT, function () {
