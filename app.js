@@ -5,15 +5,15 @@ const http = require('http');
 const app = express()
 
 app.use(function (req, res, next){
-	if (req.protocol === 'http'){
-		res.redirect(301, `https://${req.headers.host}${req.url}`)
-		console.log("HTTPS request", req.method, req.url, req.body);
-    	return next();
-	}
+	// if (req.protocol === 'http'){
+	// 	res.redirect(301, 'https://' + req.host  + ":" + PORT + req.url)
+	// 	console.log("HTTPS request", req.method, req.url, req.body);
+	// }
+	return next();
 });
 
 // Constants
-const PORT = 3000;
+//const PORT = 3000;
 // const HOST = '0.0.0.0';
 
 let httpsOptions = {
@@ -25,9 +25,9 @@ let httpsOptions = {
 
 app.use(express.static('frontend'));
 
-https.createServer(httpsOptions,app).listen(PORT, function () {
-    console.log('HTTPS on port');
-});
+// https.createServer(httpsOptions,app).listen(PORT, function () {
+//     console.log('HTTPS on port');
+// });
 http.createServer(app).listen(process.env.PORT, function () {
     console.log('HTTP on port');
 });
